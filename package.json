@@ -1,0 +1,31 @@
+{
+  "name": "readme-wizard",
+  "version": "1.0.0",
+  "description": "A CLI tool to auto-generate professional README.md files using GitHub markdown syntax",
+  "main": "lib/generateReadme.js",
+  "bin": {
+    "make-readme": "./bin/index.js"
+  },
+  "keywords": [
+    "readme",
+    "generator",
+    "cli",
+    "markdown",
+    "github"
+  ],
+  "author": "Piyush Saini",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "figlet": "^1.8.2",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^8.2.4"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "commonjs"
+}
