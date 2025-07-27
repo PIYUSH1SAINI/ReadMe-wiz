@@ -1,6 +1,6 @@
 # ReadMe-wizard
 
-> A CLI tool for generating professional READMEs using AI, powered by Google Generative AI.  Easily create comprehensive documentation with interactive prompts and code analysis.
+> A CLI tool for generating professional README files using AI.  Effortlessly create comprehensive documentation for your projects.
 
 ## Table of Contents
 
@@ -11,7 +11,6 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Scripts](#scripts)
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
@@ -19,45 +18,43 @@
 
 ## Description
 
-ReadMe-wizard is a command-line interface (CLI) tool designed to streamline the process of creating high-quality README files for software projects. It leverages Google Generative AI to generate comprehensive documentation based on your project's codebase and interactive prompts.  The tool offers an interactive setup experience enhanced with ASCII art and real-time feedback, ensuring a user-friendly and efficient workflow. Key features include automatic extraction of project information via `getGitInfo` and code parsing with `parseCode`, followed by the creation of a compelling prompt using `buildPrompt` for the AI model, and ultimately, generating the README using `generateReadme`. The `validateGeminiApiKey` function ensures proper authentication with the Gemini AI API.  The `make-readme` command, defined in the `package.json` file, provides convenient access to the CLI functionality.
+ReadMe-wizard is a command-line interface (CLI) tool designed to automate the creation of high-quality README files for software projects. Leveraging the power of Google's Generative AI, it guides you through an interactive process to gather project information and intelligently generates a comprehensive README.  The tool utilizes functions such as `validateGeminiApiKey` for secure API access and `buildPrompt` for crafting effective prompts for the AI model, ensuring accurate and relevant documentation.  Using the `make-readme` command (defined in `package.json`), you can quickly generate a well-structured README, enhancing your project's clarity and professionalism.
 
 ## Tech Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-Green?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-Blue?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/generative-ai) [![Simple Git](https://img.shields.io/badge/Simple%20Git-Blue?style=for-the-badge)](https://www.npmjs.com/package/simple-git) [![Tree Sitter](https://img.shields.io/badge/Tree%20Sitter-Blue?style=for-the-badge)](https://github.com/tree-sitter/tree-sitter) [![Chalk](https://img.shields.io/badge/Chalk-Green?style=for-the-badge)](https://github.com/chalk/chalk) [![Figlet](https://img.shields.io/badge/Figlet-Blue?style=for-the-badge)](https://www.npmjs.com/package/figlet) [![Inquirer](https://img.shields.io/badge/Inquirer-Blue?style=for-the-badge)](https://www.npmjs.com/package/inquirer) [![Ora](https://img.shields.io/badge/Ora-Green?style=for-the-badge)](https://www.npmjs.com/package/ora) [![fs-extra](https://img.shields.io/badge/fs-extra-Blue?style=for-the-badge)](https://www.npmjs.com/package/fs-extra) [![Globby](https://img.shields.io/badge/Globby-Blue?style=for-the-badge)](https://www.npmjs.com/package/globby) [![Dotenv](https://img.shields.io/badge/Dotenv-Blue?style=for-the-badge)](https://www.npmjs.com/package/dotenv) [![Prompts](https://img.shields.io/badge/Prompts-Blue?style=for-the-badge)](https://www.npmjs.com/package/prompts) [![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
+[![Node.js](https://img.shields.io/badge/Node.js-Green?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-Blue?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/generative-ai) [![Chalk](https://img.shields.io/badge/Chalk-Green?style=for-the-badge&logo=chalk&logoColor=white)](https://github.com/chalk/chalk) [![Dotenv](https://img.shields.io/badge/Dotenv-Green?style=for-the-badge&logo=dotenv&logoColor=white)](https://github.com/motdotd/dotenv) [![Figlet](https://img.shields.io/badge/Figlet-Green?style=for-the-badge&logo=figlet&logoColor=white)](https://github.com/patorjk/figlet) [![Fs-extra](https://img.shields.io/badge/Fs--extra-Green?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/jprichardson/node-fs-extra) [![Globby](https://img.shields.io/badge/Globby-Green?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/sindresorhus/globby) [![Inquirer](https://img.shields.io/badge/Inquirer-Green?style=for-the-badge&logo=inquirer&logoColor=white)](https://github.com/enquirer/enquirer) [![Ora](https://img.shields.io/badge/Ora-Green?style=for-the-badge&logo=ora&logoColor=white)](https://github.com/sindresorhus/ora) [![Prompts](https://img.shields.io/badge/Prompts-Green?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/terkelg/prompts) [![Simple Git](https://img.shields.io/badge/Simple%20Git-Green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/steveukx/git-js) [![Tree Sitter](https://img.shields.io/badge/Tree%20Sitter-Green?style=for-the-badge&logo=treesitter&logoColor=white)](https://github.com/tree-sitter/tree-sitter) [![Tree Sitter Javascript](https://img.shields.io/badge/Tree%20Sitter%20Javascript-Green?style=for-the-badge&logo=javascript&logoColor=white)](https://github.com/tree-sitter/tree-sitter-javascript) [![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
 
 
 ## Architecture Overview
 
 ```mermaid
 graph TD
-    A[getProjectFiles] --> B(parseCode);
-    B --> C(summarizeTree);
-    C --> D(buildPrompt);
-    D --> E[generateReadme];
-    A --> F[getGitInfo];
-    F --> D;
+    A[Input] --> B(generateReadme);
+    B --> C[AI Prompt];
+    C --> D(Google Generative AI);
+    D --> E[README Output];
+    E --> F[File System];
 ```
 
 ## File Structure
 
 ```mermaid
 graph TD
-    A[ReadMe-wizard] --> B(bin);
-    A --> C(lib);
-    C --> D[generateReadme.js];
-    B --> E[index.js];
-    A --> F[package.json];
-
+    A[.] --> B["lib"];
+    B --> C["generateReadme.js"];
+    A --> D["bin"];
+    D --> E["index.js"];
+    A --> F["package.json"];
 ```
 
 ## Features
 
-*   Generates READMEs using Google Generative AI.
-*   Interactive setup with Inquirer for customizable prompts.
-*   Parses project files using Tree-sitter for code analysis.
-*   Includes ASCII art using Figlet for a visually appealing experience.
-*   Provides real-time feedback during the generation process using Ora.
-*   Integrates with Git repositories using Simple Git to extract project information.
+*   Generates README files using AI-powered content generation.
+*   Interactive CLI experience using Inquirer for user input.
+*   Parses code using Tree-sitter for code-related insights in the README.
+*   Uses Figlet to display ASCII art enhancing the user experience.
+*   Provides real-time feedback and progress updates using Ora.
+*   Integrates with Git to fetch project information.
 
 
 ## Installation
@@ -65,19 +62,21 @@ graph TD
 ### Prerequisites
 
 ```bash
-# Ensure Node.js >=14 is installed.  Check with:
-node -v
+node >=14
+npm
 ```
 
 ### Setup
 
-```bash
-# Clone the repository:
-git clone https://github.com/PIYUSH1SAINI/ReadMe-wizard.git
-cd ReadMe-wizard
-# Install dependencies:
-npm install
-```
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/PIYUSH1SAINI/ReadMe-wizard.git
+    cd ReadMe-wizard
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
 ### Installation Options
 
@@ -92,6 +91,7 @@ npm install -g .
 ```bash
 npm link
 ```
+
 Complete Setup steps first, then choose one installation option.
 
 
@@ -104,28 +104,22 @@ Complete Setup steps first, then choose one installation option.
 ```bash
 node lib/generateReadme.js
 ```
-For testing without global installation.
 
+For testing without global installation.
 
 #### Run Globally
 
 ```bash
 make-readme
 ```
-This requires global installation (see Production Installation above).
 
+Requires global installation.
 
-## Scripts
-
-```bash
-{
-  "test": "echo \"Error: no test specified\" && exit 1"
-}
-```
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
 
 ## License
 
