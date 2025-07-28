@@ -1,11 +1,13 @@
 # ReadMe-wizard
 
-> A command-line tool to generate README files using generative AI.
+> A command-line tool to generate README files using interactive prompts and code analysis.
 
 ## Table of Contents
 
 - [Description](#description)
 - [Tech Stack](#tech-stack)
+- [Architecture Overview](#architecture-overview)
+- [File Structure](#file-structure)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,40 +17,54 @@
 
 ## Description
 
-ReadMe-wizard is a command-line tool built with Node.js that leverages generative AI to create comprehensive README files for software projects.  It simplifies the process of creating well-structured and informative documentation by automating the generation of key sections, including descriptions, features, and installation instructions. The primary use case is to accelerate project onboarding and collaboration by providing high-quality README files without manual effort. Its unique value lies in its ability to adapt to various project contexts and generate customized README content based on project specifics.  The `make-readme` command, defined in `package.json`, executes the main functionality.
+ReadMe-wizard is a command-line tool built with Node.js that simplifies the creation of comprehensive README files.  It leverages interactive prompts to gather project information and analyzes your codebase to automatically generate sections such as project description and file structure. This tool streamlines the README creation process, ensuring consistent and informative documentation for your projects. The primary use case is automating the generation of high-quality README files, offering significant time savings for developers.  The unique value proposition lies in its combination of interactive prompts and code parsing capabilities to produce detailed and accurate README content.  The `make-readme` CLI command, defined in the `package.json`, provides the primary entry point to the application. Functions like `generateReadme` and `parseCode` play crucial roles in this process.
 
 ## Tech Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-Green?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Inquirer.js](https://img.shields.io/badge/Inquirer.js-Yellow?style=for-the-badge&logo=inquirer.js&logoColor=white)](https://www.npmjs.com/package/inquirer)
-[![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-Blue?style=for-the-badge&logo=google&logoColor=white)](https://developers.generativeai.google/)
-[![Chalk](https://img.shields.io/badge/Chalk-BlueViolet?style=for-the-badge&logo=chalk&logoColor=white)](https://www.npmjs.com/package/chalk)
-[![Figlet](https://img.shields.io/badge/Figlet-LightGray?style=for-the-badge&logo=figlet&logoColor=white)](https://www.npmjs.com/package/figlet)
-[![fs-extra](https://img.shields.io/badge/fs--extra-Orange?style=for-the-badge&logo=fs-extra&logoColor=white)](https://www.npmjs.com/package/fs-extra)
-[![Globby](https://img.shields.io/badge/Globby-Purple?style=for-the-badge&logo=globby&logoColor=white)](https://www.npmjs.com/package/globby)
-[![Ora](https://img.shields.io/badge/Ora-Teal?style=for-the-badge&logo=ora&logoColor=white)](https://www.npmjs.com/package/ora)
-[![Prompts](https://img.shields.io/badge/Prompts-Pink?style=for-the-badge&logo=prompts&logoColor=white)](https://www.npmjs.com/package/prompts)
-[![Simple-Git](https://img.shields.io/badge/Simple--Git-Cyan?style=for-the-badge&logo=simple-git&logoColor=white)](https://www.npmjs.com/package/simple-git)
-[![Tree-Sitter](https://img.shields.io/badge/Tree--Sitter-Lime?style=for-the-badge&logo=tree-sitter&logoColor=white)](https://github.com/tree-sitter/tree-sitter)
-[![DotEnv](https://img.shields.io/badge/DotEnv-Brown?style=for-the-badge&logo=dotenv&logoColor=white)](https://www.npmjs.com/package/dotenv)
-[![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
+[![Node.js](https://img.shields.io/badge/Node.js-Green?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![Inquirer.js](https://img.shields.io/badge/Inquirer.js-Yellow?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/inquirer) [![Chalk](https://img.shields.io/badge/Chalk-White?style=for-the-badge&logo=javascript&logoColor=black)](https://www.npmjs.com/package/chalk) [![Figlet](https://img.shields.io/badge/Figlet-Orange?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/figlet) [![fs-extra](https://img.shields.io/badge/fs--extra-Purple?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/fs-extra) [![Globby](https://img.shields.io/badge/Globby-Blue?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/globby) [![Ora](https://img.shields.io/badge/Ora-Green?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/ora) [![Prompts](https://img.shields.io/badge/Prompts-Blue?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/prompts) [![Simple-Git](https://img.shields.io/badge/Simple--Git-Purple?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/simple-git) [![Tree-sitter](https://img.shields.io/badge/Tree--sitter-Orange?style=for-the-badge&logo=javascript&logoColor=white)](https://www.npmjs.com/package/tree-sitter) [![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-Blue?style=for-the-badge&logo=google&logoColor=white)](https://developers.generativeai.google/) [![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
 
+
+## Architecture Overview
+
+```mermaid
+graph TD
+    A[PromptBuilder] --> B(generateReadme);
+    C[codeParser] --> B;
+    D[gitUtils] --> B;
+    E[uiHelpers] --> A;
+    B --> F[Output README];
+```
+
+## File Structure
+
+```mermaid
+graph TD
+    A[ReadMe-wizard] --> B(bin);
+    A --> C(lib);
+    C --> D(codeParser.js);
+    C --> E(generateReadme.js);
+    C --> F(gitUtils.js);
+    C --> G(promptBuilder.js);
+    C --> H(uiHelpers.js);
+    A --> I(package.json);
+
+```
 
 ## Features
 
-*   Generates a README.md file using generative AI.
-*   Prompts the user for project details through an interactive CLI interface.
-*   Includes sections such as Description, Installation, Usage, and Features.
-*   Customizable output based on user input.
-*   Supports various programming languages and project types.
-*   Uses advanced prompts to tailor the generated content to specific project needs.
+*   **Interactive Prompts:** Guides users through a series of prompts to gather essential project details.
+*   **Code Analysis:** Parses project files to automatically extract information about the codebase.
+*   **Git Integration:** Retrieves information about the project's Git repository, including contributors.
+*   **README Generation:** Dynamically generates a comprehensive README file based on gathered information.
+*   **Customizable Output:** Allows users to tailor the generated README to their specific needs.
+*   **Cross-Platform Compatibility:** Works seamlessly across different operating systems.
 
 
 ## Installation
 
 ### Prerequisites
 
-- Node.js >=14
+*   Node.js >=14
 
 ### Setup
 
@@ -72,7 +88,6 @@ npm install -g .
 npm link
 ```
 
-
 ## Usage
 
 ### Execution Options
@@ -94,13 +109,12 @@ make-readme
 
 <a href="https://github.com/PIYUSH1SAINI" target="_blank"><img src="https://avatars.githubusercontent.com/PIYUSH1SAINI?s=60&v=4" width="60" height="60" alt="@PIYUSH1SAINI" title="@PIYUSH1SAINI" style="border-radius: 50%; margin-right: 10px;" onerror="this.src='https://github.com/identicons/PIYUSH1SAINI.png'" /></a>
 
+
 ## License
 
 MIT License
 
 
-
-
 <a href="https://github.com/PIYUSH1SAINI/ReadMe-wizard.git" target="_blank">
-<img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1753459910/ReadMe-wizard-logo_ouhi2h.png" alt="ReadMe Wizard Logo" width="300"/>
-</a>
+      <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1753459910/ReadMe-wizard-logo_ouhi2h.png" alt="ReadMe Wizard Logo" width="300"/>
+    </a>
