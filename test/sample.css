@@ -1,0 +1,15 @@
+/* test/sample.css */
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
