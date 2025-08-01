@@ -1,7 +1,6 @@
 # ReadMe-wizard
 
-> A command-line tool to generate README files for your projects.  Utilizes code analysis and AI assistance for comprehensive documentation.
-
+> A command-line tool to generate README files for software projects, analyzing code and leveraging AI.
 
 ## 📚 Table of Contents
 
@@ -15,71 +14,58 @@
   - [Setup](#setup)
 - [Usage](#usage)
   - [Execution Options](#execution-options)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 - [License](#license)
 
-
 ## Description
 
-ReadMe-wizard is a command-line tool built using Node.js that automates the creation of comprehensive README files for software projects.  It leverages code analysis to extract key information from your project's source code and utilizes AI to generate informative descriptions and summaries. The primary use case is to simplify and expedite the README creation process, enhancing project documentation quality and reducing manual effort. The tool's unique value proposition lies in its ability to parse various programming languages and generate detailed documentation, including sections on features, installation, and usage. The `make-readme` command from the `bin` entry in `package.json` executes the core functionality.  Key functions like `generateReadme`, `parseCode`, and `buildPrompt` contribute to the automation process.
-
+ReadMe-wizard is a command-line tool built with Node.js that simplifies the process of creating professional README files for software projects. It leverages AI to generate comprehensive documentation by analyzing your project's codebase, including various programming languages, HTML, CSS, and Vue.js components. Using the `make-readme` command, developers can quickly generate a high-quality README file, saving time and ensuring consistency across projects. The core functionality relies on parsing the project files to extract key information and then utilizes AI to structure and generate the README content. The `validateGeminiApiKey` function, for instance, ensures secure API usage.
 
 ## Tech Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Inquirer.js](https://img.shields.io/badge/Inquirer.js-e5d717?style=for-the-badge&logo=inquirer.js&logoColor=black)](https://www.npmjs.com/package/inquirer)
-[![Chalk](https://img.shields.io/badge/Chalk-D32F2F?style=for-the-badge&logo=chalk&logoColor=white)](https://www.npmjs.com/package/chalk)
-[![tree-sitter](https://img.shields.io/badge/tree--sitter-F87171?style=for-the-badge&logo=tree-sitter&logoColor=white)](https://github.com/tree-sitter/tree-sitter)
-[![Simple Git](https://img.shields.io/badge/simple--git-5185f7?style=for-the-badge&logo=github&logoColor=white)](https://github.com/steveukx/git-js)
-[![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285f4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/generative-ai)
-[![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
-
+[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![C++](https://img.shields.io/badge/c%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://www.cplusplus.com/) [![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/) [![Go](https://img.shields.io/badge/go-%2300ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/) [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/) [![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![Ruby](https://img.shields.io/badge/ruby-CC342B?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/) [![Rust](https://img.shields.io/badge/rust-%2300599C.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/) [![Vue.js](https://img.shields.io/badge/vue-%2341B883.svg?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/) [![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
 
 ## Architecture Overview
 
 ```mermaid
 graph TD
-    A[CLI Input] --> B(promptBuilder);
-    B --> C(codeParser);
-    C --> D(generateReadme);
-    D --> E[README.md Output];
-    C --> F(gitUtils);
-    F --> D;
-
+    A[Code Parser] --> B(README Generator);
+    C[Prompt Builder] --> B;
+    D[Git Utils] --> B;
+    E[UI Helpers] --> A;
 ```
 
 ## File Structure
 
 ```mermaid
 graph TD
-    A[package.json] --> B(bin);
-    B --> C[index.js];
-    A --> D(lib);
-    D --> E[codeParser.js];
-    D --> F[generateReadme.js];
-    D --> G[gitUtils.js];
-    D --> H[promptBuilder.js];
-    D --> I[uiHelpers.js];
-    A --> J(test);
-    J --> K[sample.*];
-
+    A[package.json] --> B{lib};
+    B --> C[codeParser.js];
+    B --> D[generateReadme.js];
+    B --> E[gitUtils.js];
+    B --> F[promptBuilder.js];
+    B --> G[uiHelpers.js];
+    A --> H{bin};
+    H --> I[index.js];
+    A --> J{test};
 ```
 
 ## Features
 
-*   Parses various programming languages (C++, C#, CSS, Go, HTML, Java, Javascript, JSX, PHP, Python, Ruby, Rust, Typescript, TSX, Vue) to extract code information.
-*   Generates a structured README.md file including sections for Description, Tech Stack, Installation, Usage, and Contributing.
-*   Uses Git integration to extract contributor information and commit history.
-*   Provides a customizable prompt-based interface for user input.
-*   Supports both simple and detailed README generation.
-*   Integrates with Google's Generative AI for enhanced content generation (with API key).
+- Parses code from various languages (C++, C#, Go, HTML, Java, JavaScript, JSX, PHP, Python, Ruby, Rust, TypeScript, TSX, Vue.js) to extract relevant information.
+- Generates a structured README.md file including sections like Description, Tech Stack, and Installation.
+- Utilizes AI for enhanced content generation and improved readability.
+- Supports Git integration to extract contributor information.
+- Provides a user-friendly command-line interface (`make-readme`).
+- Includes API key validation for secure usage.
 
 ## Installation
 
 ### Prerequisites
 
-*   Node.js >=14
+- Node.js >=14
 
 ### Setup
 
@@ -96,42 +82,49 @@ graph TD
     npm install
     ```
 
-
 ## Usage
 
 ### Execution Options
 
-The primary command is `make-readme`.  A second command allows for a custom user request to be appended to the `make-readme` command. For example:
+#### Global CLI
 
-
-```bash
-make-readme "Add a section on supported languages"
-```
-
-This will generate the README file with additional information based on the specified request.
-
+To generate a README file for your project, run:
 
 ```bash
 make-readme
 ```
 
-This will generate the README file using default settings.
+This command will create or update a README file in the current directory.
 
+The following options are available:
+
+1. **`make-readme`**: This command creates a new README file using default settings. If a README already exists, it will overwrite it.
+
+2. **`make-readme --new`**: This command creates a completely new README file. If a README already exists, it will be overwritten.
+
+3. **`make-readme --new "some user requests"`**: This command creates a new README file incorporating the specified user requests. The requests should be a description of the desired content for the README. If a README already exists, it will be overwritten.
+
+4. **`make-readme "some user requests"`**: This command updates an existing README file with the specified user requests. The requests should be a description of the desired content changes for the README. If no README file exists, a new one will be created.
+
+## Testing
+
+This project includes a test suite for the multilanguage feature. The tests are located in the `test` folder. To run the tests, execute the following command:
+
+```bash
+node runParserTests.js
+```
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-
 ## Contributors
 
 <a href="https://github.com/PIYUSH1SAINI" target="_blank"><img src="https://avatars.githubusercontent.com/PIYUSH1SAINI?s=60&v=4" width="60" height="60" alt="@PIYUSH1SAINI" title="@PIYUSH1SAINI" style="border-radius: 50%; margin-right: 10px;" onerror="this.src='https://github.com/identicons/PIYUSH1SAINI.png'" /></a>
 
-
 ## License
 
 MIT License
-
 
 <a href="https://github.com/PIYUSH1SAINI/ReadMe-wizard.git" target="_blank">
       <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1753459910/ReadMe-wizard-logo_ouhi2h.png" alt="ReadMe Wizard Logo" width="300"/>
