@@ -1,6 +1,6 @@
 {
   "name": "readme-wiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to auto-generate professional README.md files using GitHub markdown syntax",
   "main": "lib/generateReadme.js",
   "bin": {
