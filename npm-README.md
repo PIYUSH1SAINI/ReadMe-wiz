@@ -1,5 +1,5 @@
-> [!CAUTION]
-> ⚠️ Don't use `npm i readme-wiz` without the `-g` flag — the `make-readme` command won't be available globally without it.
+> ⚠️ This is a CLI tool. Please install it globally using:
+> `npm install -g readme-wiz`
 
 # readme-wiz
 
