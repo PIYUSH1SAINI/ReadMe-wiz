@@ -1,4 +1,4 @@
-# ReadMe-wizard
+# ReadMe-wiz
 
 > A command-line tool to generate README files for software projects, analyzing code and leveraging AI.
 
@@ -21,11 +21,11 @@
 
 ## Description
 
-ReadMe-wizard is a command-line tool built with Node.js that simplifies the process of creating professional README files for software projects. It leverages AI to generate comprehensive documentation by analyzing your project's codebase, including various programming languages, HTML, CSS, and Vue.js components. Using the `make-readme` command, developers can quickly generate a high-quality README file, saving time and ensuring consistency across projects. The core functionality relies on parsing the project files to extract key information and then utilizes AI to structure and generate the README content. The `validateGeminiApiKey` function, for instance, ensures secure API usage.
+ReadMe-wiz is a command-line tool built with Node.js that simplifies the process of creating professional README files for software projects. It leverages AI to generate comprehensive documentation by analyzing your project's codebase, including various programming languages, HTML, CSS, and Vue.js components. Using the `make-readme` command, developers can quickly generate a high-quality README file, saving time and ensuring consistency across projects. The core functionality relies on parsing the project files to extract key information and then utilizes AI to structure and generate the README content. The `validateGeminiApiKey` function, for instance, ensures secure API usage.
 
 ## Tech Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![C++](https://img.shields.io/badge/c%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://www.cplusplus.com/) [![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/) [![Go](https://img.shields.io/badge/go-%2300ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/) [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/) [![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![Ruby](https://img.shields.io/badge/ruby-CC342B?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/) [![Rust](https://img.shields.io/badge/rust-%2300599C.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/) [![Vue.js](https://img.shields.io/badge/vue-%2341B883.svg?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/) [![✨ Made with ReadME Wizard](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wizard-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wizard.git)
+[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![C++](https://img.shields.io/badge/c%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://www.cplusplus.com/) [![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/) [![Go](https://img.shields.io/badge/go-%2300ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/) [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/) [![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![Ruby](https://img.shields.io/badge/ruby-CC342B?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/) [![Rust](https://img.shields.io/badge/rust-%2300599C.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/) [![Vue.js](https://img.shields.io/badge/vue-%2341B883.svg?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/) [![✨ Made with ReadME Wiz](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wiz-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wiz.git)
 
 ## Architecture Overview
 
@@ -71,11 +71,11 @@ graph TD
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/PIYUSH1SAINI/ReadMe-wizard.git
+    git clone https://github.com/PIYUSH1SAINI/ReadMe-wiz.git
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd ReadMe-wizard
+    cd ReadMe-wiz
     ```
 3.  Install dependencies:
     ```bash
@@ -126,6 +126,6 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 MIT License
 
-<a href="https://github.com/PIYUSH1SAINI/ReadMe-wizard.git" target="_blank">
-      <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1753459910/ReadMe-wizard-logo_ouhi2h.png" alt="ReadMe Wizard Logo" width="300"/>
+<a href="https://github.com/PIYUSH1SAINI/ReadMe-wiz.git" target="_blank">
+      <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1754320207/ReadMe-wiz-logo_k3uq6w.png" alt="ReadMe Wiz Logo" width="300"/>
     </a>
