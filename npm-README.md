@@ -1,3 +1,6 @@
+> [!CAUTION]
+> ⚠️ Don't use `npm i readme-wiz` without the `-g` flag — the `make-readme` command won't be available globally without it.
+
 # readme-wiz
 
 > 🧙 A CLI to auto-generate professional `README.md` files using AI and code analysis.
