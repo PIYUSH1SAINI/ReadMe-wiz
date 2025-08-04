@@ -1,0 +1,40 @@
+# Node-related
+node_modules/
+.env
+*.log
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Git-related
+.git/
+.gitignore
+
+# Development files
+test/
+tests/
+__tests__/
+coverage/
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts
+dist/
+build/
+tmp/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.local
+*.bak
+*.old
+*.zip
+screenshots/
+examples/
+docs/
