@@ -7,6 +7,8 @@
     "make-readme": "./bin/index.js"
   },
   "keywords": [
+    "readme",
+    "README",
     "readme generator",
     "generate readme",
     "AI readme",
@@ -15,6 +17,11 @@
     "auto readme",
     "developer tools",
     "open source",
+    "github readme",
+    "github readme generator",
+    "readme-wiz",
+    "readme wiz",
+    "readme wizard",
     "project documentation",
     "npm cli tool",
     "readme automation",
