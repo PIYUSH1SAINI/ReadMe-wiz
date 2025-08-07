@@ -8,6 +8,8 @@
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+    - [npm Installation](#npm-installation)
+    - [GitHub Clone and Installation](#github-clone-and-installation)
 - [Usage](#usage)
   - [Execution Options](#execution-options)
 - [Tech Stack](#tech-stack)
@@ -32,19 +34,35 @@ ReadMe-wiz is a command-line tool built with Node.js that simplifies the process
 
 ### Setup
 
-1.  Install via npm:
+#### npm Installation
+1. Install via npm:
     ```bash
     npm install -g readme-wiz
     ```
 
-2.  You can then use the `make-readme` command as described in the Usage section.
+2. You can then use the `make-readme` command as described in the Usage section.
+
+#### GitHub Clone and Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/PIYUSH1SAINI/ReadMe-wiz.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd ReadMe-wiz
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. You can then use the `make-readme` command (as described below) from within the project directory.  Note that you may need to adjust the command to reflect the appropriate path to the executable.
 
 
 ## Usage
 
 ### Execution Options
 
-#### Global CLI
+#### Global CLI (after npm installation)
 
 To generate a README file for your project, run:
 
