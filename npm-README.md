@@ -40,3 +40,13 @@ The following options are available:
 
 - Node.js >=14
 - Google Gemini API Key (set in .env)
+
+## Contributors
+
+<a href="https://github.com/PIYUSH1SAINI" target="_blank"><img src="https://avatars.githubusercontent.com/PIYUSH1SAINI?s=60&v=4" width="60" height="60" alt="@PIYUSH1SAINI" title="@PIYUSH1SAINI" style="border-radius: 50%; margin-right: 10px;" onerror="this.src='https://github.com/identicons/PIYUSH1SAINI.png'" /></a>
+
+---
+
+<a href="https://github.com/PIYUSH1SAINI/ReadMe-wiz.git" target="_blank">
+      <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1754320207/ReadMe-wiz-logo_k3uq6w.png" alt="ReadMe Wiz Logo" width="300"/>
+    </a>
