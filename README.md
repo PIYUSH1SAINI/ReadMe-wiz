@@ -5,15 +5,15 @@
 ## 📚 Table of Contents
 
 - [Description](#description)
-- [Tech Stack](#tech-stack)
-- [Architecture Overview](#architecture-overview)
-- [File Structure](#file-structure)
-- [Features](#features)
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
 - [Usage](#usage)
   - [Execution Options](#execution-options)
+- [Tech Stack](#tech-stack)
+- [Architecture Overview](#architecture-overview)
+- [File Structure](#file-structure)
+- [Features](#features)
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
@@ -22,6 +22,47 @@
 ## Description
 
 ReadMe-wiz is a command-line tool built with Node.js that simplifies the process of creating professional README files for software projects. It leverages AI to generate comprehensive documentation by analyzing your project's codebase, including various programming languages, HTML, CSS, and Vue.js components. Using the `make-readme` command, developers can quickly generate a high-quality README file, saving time and ensuring consistency across projects. The core functionality relies on parsing the project files to extract key information and then utilizes AI to structure and generate the README content. The `validateGeminiApiKey` function, for instance, ensures secure API usage.
+
+
+## Installation
+
+### Prerequisites
+
+- Node.js >=14
+
+### Setup
+
+1.  Install via npm:
+    ```bash
+    npm install -g readme-wiz
+    ```
+
+2.  You can then use the `make-readme` command as described in the Usage section.
+
+
+## Usage
+
+### Execution Options
+
+#### Global CLI
+
+To generate a README file for your project, run:
+
+```bash
+make-readme
+```
+
+This command will create or update a README file in the current directory.
+
+The following options are available:
+
+1. **`make-readme`**: This command creates a new README file using default settings. If a README already exists, it will overwrite it.
+
+2. **`make-readme --new`**: This command creates a completely new README file. If a README already exists, it will be overwritten.
+
+3. **`make-readme --new "some user requests"`**: This command creates a new README file incorporating the specified user requests. The requests should be a description of the desired content for the README. If a README already exists, it will be overwritten.
+
+4. **`make-readme "some user requests"`**: This command updates an existing README file with the specified user requests. The requests should be a description of the desired content changes for the README. If no README file exists, a new one will be created.
 
 ## Tech Stack
 
@@ -60,51 +101,6 @@ graph TD
 - Supports Git integration to extract contributor information.
 - Provides a user-friendly command-line interface (`make-readme`).
 - Includes API key validation for secure usage.
-
-## Installation
-
-### Prerequisites
-
-- Node.js >=14
-
-### Setup
-
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/PIYUSH1SAINI/ReadMe-wiz.git
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd ReadMe-wiz
-    ```
-3.  Install dependencies:
-    ```bash
-    npm install
-    ```
-
-## Usage
-
-### Execution Options
-
-#### Global CLI
-
-To generate a README file for your project, run:
-
-```bash
-make-readme
-```
-
-This command will create or update a README file in the current directory.
-
-The following options are available:
-
-1. **`make-readme`**: This command creates a new README file using default settings. If a README already exists, it will overwrite it.
-
-2. **`make-readme --new`**: This command creates a completely new README file. If a README already exists, it will be overwritten.
-
-3. **`make-readme --new "some user requests"`**: This command creates a new README file incorporating the specified user requests. The requests should be a description of the desired content for the README. If a README already exists, it will be overwritten.
-
-4. **`make-readme "some user requests"`**: This command updates an existing README file with the specified user requests. The requests should be a description of the desired content changes for the README. If no README file exists, a new one will be created.
 
 ## Testing
 
