@@ -37,6 +37,14 @@
   ],
   "author": "Piyush Saini",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PIYUSH1SAINI/ReadMe-wiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PIYUSH1SAINI/ReadMe-wiz/issues"
+  },
+  "funding": "https://github.com/sponsors/PIYUSH1SAINI",
   "dependencies": {
     "@google/genai": "^1.11.0",
     "@google/generative-ai": "^0.24.1",
