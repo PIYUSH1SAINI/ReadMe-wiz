@@ -1,6 +1,11 @@
 # ReadMe-wiz
 
-> A command-line tool to generate README files for software projects, leveraging code analysis and Git information.
+> A command-line tool for generating README files. Utilizes code parsing and prompts to create comprehensive documentation.
+
+[![Version](https://img.shields.io/npm/v/readme-wiz?style=for-the-badge)](https://www.npmjs.com/package/readme-wiz)
+[![License](https://img.shields.io/npm/l/readme-wiz?style=for-the-badge)](https://github.com/PIYUSH1SAINI/ReadMe-wiz)
+[![Downloads](https://img.shields.io/npm/dm/readme-wiz?style=for-the-badge)](https://www.npmjs.com/package/readme-wiz)
+[![GitHub Stars](https://img.shields.io/github/stars/PIYUSH1SAINI/ReadMe-wiz?style=for-the-badge)](https://github.com/PIYUSH1SAINI/ReadMe-wiz)
 
 ## 📚 Table of Contents
 
@@ -10,35 +15,45 @@
 - [File Structure](#file-structure)
 - [Features](#features)
 - [Installation](#installation)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
 - [Usage](#usage)
-  - [Execution Options](#execution-options)
-- [Contributing](#contributing)
 - [Contributors](#contributors)
 - [License](#license)
 
 ## Description
 
-ReadMe-wiz is a command-line tool built with Node.js that automates the creation of professional README files for software projects. It analyzes your project's codebase, extracts relevant information from your Git repository, and uses this data to generate a comprehensive and well-structured README.md file. This streamlines the documentation process, ensuring consistent and informative documentation for all your projects. The core functionality relies on parsing various programming languages (including C++, C#, CSS, Go, HTML, Java, JavaScript, JSX, PHP, Python, Ruby, Rust, TypeScript, and Vue.js) to extract key structural elements like functions, classes, and methods. The `generateReadme` function in `lib/generateReadme.js` orchestrates the process, utilizing other modules like `codeParser` for code analysis and `gitUtils` for Git information retrieval. The `make-readme` command, defined in `package.json`, provides a convenient CLI interface for users.
+ReadMe-wiz is a command-line tool designed to simplify the process of generating comprehensive README files for software projects. It leverages code parsing capabilities to extract key information from your project's source code, then uses prompts to gather additional details and generate a polished README.md. The `make-readme` CLI command, defined in the `package.json` file, provides a user-friendly interface for generating READMEs. The tool supports a wide range of programming languages, demonstrated by its ability to parse various file types in the test directory. Key functions like `generateReadme` and `parseCode` highlight its core functionality.
 
 ## Tech Stack
 
-[![Node.js](https://img.shields.io/badge/Node.js-Green?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![inquirer](https://img.shields.io/badge/inquirer-grey?style=for-the-badge&logo=inquirer&logoColor=white)](https://www.npmjs.com/package/inquirer) [![Chalk](https://img.shields.io/badge/Chalk-white?style=for-the-badge&logo=chalk&logoColor=black)](https://www.npmjs.com/package/chalk) [![tree-sitter](https://img.shields.io/badge/tree--sitter-grey?style=for-the-badge&logo=tree-sitter&logoColor=white)](https://github.com/tree-sitter/tree-sitter) [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/) [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/) [![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/) [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![Java](https://img.shields.io/badge/java-%23ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/en/) [![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/) [![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![Ruby](https://img.shields.io/badge/ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/) [![Rust](https://img.shields.io/badge/rust-%2300599C?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/) [![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/) [![✨ Made with ReadME Wiz](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wiz-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wiz.git)
+[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Inquirer.js](https://img.shields.io/badge/Inquirer.js-e36913?style=for-the-badge&logo=inquirer.js&logoColor=white)](https://www.npmjs.com/package/inquirer)
+[![Chalk](https://img.shields.io/badge/Chalk-D32323?style=for-the-badge&logo=chalk&logoColor=white)](https://www.npmjs.com/package/chalk)
+[![Tree-sitter](https://img.shields.io/badge/Tree--sitter-007ACC?style=for-the-badge&logo=treeritter&logoColor=white)](https://tree-sitter.github.io/)
+[![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai/generative-ai)
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
+[![C++](https://img.shields.io/badge/c%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+[![C#](https://img.shields.io/badge/c%23-5C2D91?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
+[![CSS](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
+[![Go](https://img.shields.io/badge/go-%2300ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
+[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
+[![Java](https://img.shields.io/badge/java-%23ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+[![PHP](https://img.shields.io/badge/php-%23777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Ruby](https://img.shields.io/badge/ruby-%23CC342B?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/)
+[![Rust](https://img.shields.io/badge/rust-%2300599C?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vue.js](https://img.shields.io/badge/vue-%2341B883?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
+[![✨ Made with ReadME Wiz](https://img.shields.io/badge/✨%20Made%20with-ReadME%20Wiz-blueviolet?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/PIYUSH1SAINI/ReadMe-wiz.git)
 
 ## Architecture Overview
 
 ```mermaid
 graph TD
-    A[CLI] --> B(generateReadme);
-    B --> C(codeParser);
-    B --> D(gitUtils);
-    B --> E(promptBuilder);
-    B --> F(uiHelpers);
-    C --> G{Code Files};
-    D --> H[Git Repo];
-    E --> I[User Prompts];
-    F --> J[Console Output];
+    A[PromptBuilder] --> B(generateReadme);
+    C[codeParser] --> B;
+    D[gitUtils] --> B;
+    E[uiHelpers] --> A;
+    B --> F[README.md];
 
 ```
 
@@ -46,51 +61,49 @@ graph TD
 
 ```mermaid
 graph TD
-    A[ReadMe-wiz] --> B(bin);
-    A --> C(lib);
-    A --> D(test);
-    B --> E["index.js"];
-    C --> F["codeParser.js"];
-    C --> G["generateReadme.js"];
-    C --> H["gitUtils.js"];
-    C --> I["promptBuilder.js"];
-    C --> J["uiHelpers.js"];
-    D --> K["sample.*"];
-    A --> L["package.json"];
-    A --> M["runParserTests.js"];
+    A[package.json] --> B(bin);
+    B --> C[index.js];
+    A --> D(lib);
+    D --> E[codeParser.js];
+    D --> F[generateReadme.js];
+    D --> G[gitUtils.js];
+    D --> H[promptBuilder.js];
+    D --> I[uiHelpers.js];
+    A --> J(test);
+    J --> K["sample.*"];
 
 ```
 
 ## Features
 
-- **Automated README Generation:** Creates a comprehensive README.md file based on code and Git information.
-- **Multi-Language Support:** Parses code from various programming languages (C++, C#, CSS, Go, HTML, Java, JavaScript, JSX, PHP, Python, Ruby, Rust, TypeScript, Vue.js).
-- **Git Integration:** Extracts contributor information and repository details from your Git history.
-- **Interactive Prompts:** Guides users through the process with clear prompts for customization.
-- **Customizable Output:** Allows for tailoring the generated README to specific project requirements.
-- **Command-Line Interface:** Provides a simple and efficient way to generate READMEs via the `make-readme` command.
+- Parses various programming languages (C++, C#, CSS, Go, HTML, Java, JavaScript, JSX, PHP, Python, Ruby, Rust, TypeScript, TSX, Vue) to extract code information.
+- Generates a README.md file based on parsed code and user input.
+- Uses prompts to guide the user through the README creation process.
+- Utilizes Git integration to fetch contributor information.
+- Supports API key validation (for example, `validateGeminiApiKey`).
+- Provides a user-friendly CLI interface via `make-readme`.
 
 ## Installation
 
 ### Prerequisites
 
 > [!NOTE]
-> Node.js >=14 and npm are required for ReadMe-wiz. Ensure you have these installed before proceeding.
+> Node.js >=14 is required for compatibility. Ensure you have Node.js and npm installed.
 
 ### Setup
 
-1. **Global CLI Installation**
+1.  **Global CLI Installation**: Install the CLI tool globally.
 
-   ```bash
-   npm install -g readme-wiz
-   ```
+    ```bash
+    npm install -g readme-wiz
+    ```
 
-2. **Clone Repository**
-   ```bash
-   git clone https://github.com/PIYUSH1SAINI/ReadMe-wiz.git
-   cd ReadMe-wiz
-   npm install
-   ```
+2.  **Clone Repository**: Clone the repository and install dependencies.
+    ```bash
+    git clone https://github.com/PIYUSH1SAINI/ReadMe-wiz.git
+    cd ReadMe-wiz
+    npm install
+    ```
 
 > [!TIP]
 > Use `npm install -g readme-wiz` for the quickest setup.
@@ -99,18 +112,16 @@ graph TD
 
 ### Execution Options
 
+#### Global CLI
+
 > [!IMPORTANT]
-> Ensure that you have a project directory with code files and a `.git` repository before running ReadMe-wiz.
+> Ensure that you have cloned the repository and run `npm install` before using the CLI.
 
-#### Global CLI Execution
-
-To generate a README.md file, navigate to your project's root directory and run:
+To generate a README, simply run:
 
 ```bash
 make-readme
 ```
-
-This command will create or update a README file in the current directory.
 
 The following options are available:
 
@@ -130,10 +141,6 @@ This project includes a test suite for the multilanguage feature. The tests are 
 node runParserTests.js
 ```
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
-
 ## Contributors
 
 <a href="https://github.com/PIYUSH1SAINI" target="_blank"><img src="https://avatars.githubusercontent.com/PIYUSH1SAINI?s=60&v=4" width="60" height="60" alt="@PIYUSH1SAINI" title="@PIYUSH1SAINI" style="border-radius: 50%; margin-right: 10px;" onerror="this.src='https://github.com/identicons/PIYUSH1SAINI.png'" /></a>
@@ -141,6 +148,8 @@ Contributions are welcome! Please open an issue or submit a pull request on GitH
 ## License
 
 MIT License
+
+This software is licensed under the MIT License. See the LICENSE file for details.
 
 <a href="https://github.com/PIYUSH1SAINI/ReadMe-wiz.git" target="_blank">
       <img src="https://res.cloudinary.com/dy1znaiby/image/upload/v1754320207/ReadMe-wiz-logo_k3uq6w.png" alt="ReadMe Wiz Logo" width="300"/>
